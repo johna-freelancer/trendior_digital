@@ -12,14 +12,14 @@ Version: 1.0
 #Black1 (text, background, button) = #00000 / #111214
 #White (text, subtitle) = #FFFFFF
 #Gray (text) = #555555 / #AAAAAA
-#Light Gray (background, hover) = #F5F5F5 / #C8C8C8 / #999999
+#Light Gray (background, hover) = #ffffff / var(--secondary-color) / #999999
 #Light Yellow (background) = #FBF9F1 / #FDEDBA
 #Green (button, background, icon) = #009A67
 #Yellow (title, subtitle, text, button) = #EDA42E
-#Dark Blue (subtitle, title, text, background) = #16163F / #17193C
+#Dark Blue (subtitle, title, text, background) = #16163F / var(--secondary-color)
 #Light Blue (button, subtitle, text, border, hover) = #EE7F2 / #7294E1
-#Orange (title, button, text, background, border) = #EF7A5E
-#Light Orange (button, background) = #EFE2DC / #FFF8F2 / #FDCDBA
+#Orange (title, button, text, background, border) = var(--secondary-color)
+#Light Orange (button, background) = var(--secondary-light-color) / var(--tertiary-color) / #FDCDBA
 
 [Typography]
 
@@ -100,7 +100,14 @@ Notes: To change the font, install it manually with convert the download zipped 
 /*-----------------------------------------------------------------------------------*/
 /*  1. CSS Reset
 /*-----------------------------------------------------------------------------------*/
-
+:root {
+  --primary-color: #0485bc;
+  --secondary-color: #01c99d;
+  --tertiary-color: #03a7ad;
+  --primary-light-color: #b8ddf0;
+  --secondary-light-color: #e2f8f3;
+  --tertiary-light-color: #daf5f5;
+}
 html {
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
@@ -112,7 +119,7 @@ body {
   word-wrap: break-word;
   -ms-word-wrap: break-word;
   font-size: 15px;
-  background: #f5f5f5;
+  background: #ffffff;
   margin: 0;
   font-weight: normal;
   color: #555555;
@@ -506,6 +513,7 @@ body.irhas3 {
 
 .subheader-list li.menu-item a {
   padding-right: 10px;
+  color: var(--primary-color);
 }
 
 .subheader-list li.menu-item:last-child a {
@@ -547,6 +555,7 @@ body.irhas3 {
 
 .main-nav li.menu-item {
   margin-right: 30px;
+  color: var(--primary-color)
 }
 
 .main-nav .sub-menu {
@@ -663,7 +672,17 @@ li.right-area-item:last-child {
 
 .logo {
   margin-right: 40px;
+  display: inline-flex;align-content: stretch;flex-wrap: nowrap;flex-direction: row;justify-content: space-evenly;align-items: center;
 }
+
+.logo-text1 {
+  color: var(--primary-color);
+}
+
+.logo-text2 {
+  color: var(--secondary-color);
+}
+
 
 .irhas1 .logo {
   margin-right: 50px;
@@ -715,12 +734,12 @@ li.right-area-item:last-child {
 /* 2.4. Header Irhas 3*/
 
 .irhas3 .header-style-3 .sm-clean ul a:hover {
-  color: #ef7a5e;
+  color: var(--secondary-color);
   background: transparent;
 }
 
 .irhas3 .sm-clean a:hover {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3 a.button.button-head-item {
@@ -728,27 +747,27 @@ li.right-area-item:last-child {
   border-radius: 50px;
   text-align: center;
   font-weight: 600;
-  background-color: #efe2dc;
-  color: #ef7a5e;
+  background-color: var(--secondary-light-color);
+  color: var(--secondary-color);
 }
 
 .irhas3 a.button.button-head-item:hover {
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   color: #ffffff;
 }
 
 .main-nav ul li.menu-irhas3 a:hover {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3 .sm-clean > li > ul:before,
 .irhas3 .sm-clean > li > ul:after {
   left: 16px;
-  border-color: transparent transparent #ef7a5e transparent;
+  border-color: transparent transparent var(--secondary-color) transparent;
 }
 
 .irhas3 .sm-clean ul {
-  border-top: 2px solid #ef7a5e;
+  border-top: 2px solid var(--secondary-color);
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -1293,7 +1312,7 @@ svg.home1.svg1 {
 }
 
 #irhas-service-2 .category-content {
-  line-height: 0px;
+  line-height: 19px;
   color: #ffffff;
 }
 
@@ -1694,7 +1713,7 @@ svg.home1.svg1 {
 /* Blog Block */
 .irhas1 .blog-block {
   padding: 258px 0 150px 0;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 .irhas1 .blog-wrap {
@@ -2461,8 +2480,8 @@ a.button.button-head-item2:hover {
 
 .irhas2 .portfolio-block-home2 .portfolio-button a:hover {
   color: #ffffff;
-  background-color: #17193c;
-  border-color: #17193c;
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 .irhas2 .portfolio-block-home2 .portfolio-button:hover {
@@ -2807,8 +2826,8 @@ a.button.button-head-item2:hover {
 
 .irhas2 .team-block-home2 .button-team a:hover {
   color: #ffffff;
-  background-color: #17193c;
-  border-color: #17193c;
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 .irhas2 .team-block-home2 .button-team:hover {
@@ -2840,7 +2859,7 @@ a.button.button-head-item2:hover {
 
 /* Testimonial Block */
 .irhas2 .testimonial-home2-block {
-  background-color: #17193c;
+  background-color: var(--secondary-color);
   padding: 85px 40px 108px 40px;
 }
 
@@ -2955,7 +2974,7 @@ a.button.button-head-item2:hover {
 /* Blog Loop Block*/
 .irhas2 .blog-block-home2 {
   padding: 105px 0 50px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 .irhas2 .blog-block-home2 .blog-title {
@@ -3033,12 +3052,12 @@ a.button.button-head-item2:hover {
 }
 
 .irhas2 .blog-item-style-6 .blog-grid-meta .meta-holder .read-more {
-  background-color: #17193c;
+  background-color: var(--secondary-color);
 }
 
 .irhas2 .blog-item-style-6 .blog-grid-meta .meta-holder .read-more {
   position: absolute;
-  background: #17193c;
+  background: var(--secondary-color);
   color: #fff;
   font-size: 20px;
   line-height: 28px;
@@ -3098,7 +3117,7 @@ a.button.button-head-item2:hover {
 }
 
 .irhas2 .blog-item-style-6 .blog-grid-meta .meta-holder .read-more {
-  background-color: #17193c;
+  background-color: var(--secondary-color);
 }
 
 .irhas2 .blog-item-style-6:hover .blog-grid-meta .meta-holder .read-more {
@@ -3113,7 +3132,7 @@ a.button.button-head-item2:hover {
 
 .irhas2 .blog-item-style-6 .blog-grid-meta .meta-holder .read-more {
   position: absolute;
-  background: #17193c;
+  background: var(--secondary-color);
   color: #fff;
   font-size: 20px;
   line-height: 28px;
@@ -3135,7 +3154,7 @@ a.button.button-head-item2:hover {
 }
 
 .irhas2 .blog-item-style-6 .post-thumb-img h3 a:hover {
-  color: #17193c;
+  color: var(--secondary-color);
 }
 
 .irhas2 .blog2 .blog-item-style-6 .post-thumb-img h3 a:hover {
@@ -3184,7 +3203,7 @@ a.button.button-head-item2:hover {
   font-family: "Montserrat", Sans-serif;
   padding: 20px 30px;
   color: #ffffff;
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   border-radius: 50px;
   font-size: 16px;
   font-weight: 500;
@@ -3193,7 +3212,7 @@ a.button.button-head-item2:hover {
 
 .irhas3 .button-about a:hover {
   color: #ffffff;
-  background-color: #17193c;
+  background-color: var(--secondary-color);
 }
 
 .irhas3 .the-title h2 {
@@ -3201,21 +3220,21 @@ a.button.button-head-item2:hover {
   font-weight: bold;
   margin-top: 0px;
   margin-bottom: 0px;
-  color: #17193c;
+  color: var(--primary-color);
 }
 .irhas3 .the-title h1 {
   font-family: "Montserrat", Sans-serif;
   font-size: 5rem;
   line-height: 1.1em;
   margin-top: 0px;
-  color: #17193c;
+  color: var(--primary-color);
 }
 
 .irhas3 .the-desc p {
   font-family: "Poppins";
   margin-top: 10px;
   line-height: 30px;
-  color: #555555;
+  color: var(--primary-color);
   font-weight: normal;
 }
 
@@ -3225,7 +3244,7 @@ a.button.button-head-item2:hover {
   font-weight: 500;
   letter-spacing: 1.6px;
   text-transform: uppercase;
-  color: #ef7a5e;
+  color: var(--secondary-color);
   margin-bottom: 14px;
 }
 
@@ -3307,11 +3326,11 @@ a.button.button-head-item2:hover {
 /* Portfolio Block */
 
 .irhas3 .portfolio-block {
-  background-color: #f2d8d3;
+  background-color: var(--tertiary-color);
   transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding: 295px 0px 0px 0px;
+  padding: 170px 0px 0px 130px;
   z-index: 2;
   position: relative;
   max-height: 100%;
@@ -3493,14 +3512,14 @@ a.button.button-head-item2:hover {
   font-weight: 500;
   fill: #ffffff;
   color: #ffffff;
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   border-radius: 50px 50px 50px 50px;
   padding: 18px 25px 18px 25px;
 }
 
 .irhas3 .portfolio-button a:hover {
   color: #ffffff;
-  background-color: #17193c;
+  background-color: var(--secondary-color);
 }
 
 .irhas3 .portfolio-style-1 .portfolio-hover {
@@ -3512,7 +3531,7 @@ a.button.button-head-item2:hover {
   z-index: 1;
   opacity: 0;
   transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-  background-color: #17193c;
+  background-color: var(--secondary-color);
   border-radius: 5px;
 }
 
@@ -3525,7 +3544,7 @@ a.button.button-head-item2:hover {
   z-index: 1;
   opacity: 0;
   transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   border-radius: 5px;
 }
 
@@ -3536,8 +3555,8 @@ a.button.button-head-item2:hover {
 /* Service Block */
 
 .irhas3 .service-block {
-  padding: 172px 0 130px;
-  background-color: #eaeaea;
+  padding: 240px 0 130px;
+  background-color: var(--tertiary-light-color);
   height: 100%;
   position: relative;
 }
@@ -3548,7 +3567,7 @@ a.button.button-head-item2:hover {
 }
 
 .irhas3 .service-block .shape-fill {
-  fill: #eaeaea;
+  fill: var(--tertiary-light-color);
 }
 
 .irhas3 .service-wrapper {
@@ -3587,7 +3606,7 @@ a.button.button-head-item2:hover {
 .irhas3 .service-style-2 {
   position: relative;
   transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-  min-height: 317px;
+  min-height: 350px;
 }
 
 .irhas3 .service-style-2:hover {
@@ -3725,7 +3744,7 @@ a.button.button-head-item2:hover {
   font-size: 16px;
   font-weight: 500;
   color: #ffffff;
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   border-radius: 50px;
   padding: 12px 32px;
   border: none;
@@ -3733,7 +3752,7 @@ a.button.button-head-item2:hover {
 
 .irhas3 .service-button a:hover {
   color: #ffffff;
-  background-color: #17193c;
+  background-color: var(--secondary-color);
 }
 
 /* Testimonial Block */
@@ -3775,13 +3794,13 @@ a.button.button-head-item2:hover {
   font-weight: 500;
   fill: #ffffff;
   color: #ffffff;
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   border-radius: 50px 50px 50px 50px;
   padding: 17px 30px 17px 30px;
 }
 
 .irhas3 .title-testimonial .button-testi a:hover {
-  background-color: #17193c;
+  background-color: var(--secondary-color);
 }
 
 .irhas3 .testimonial-detail-inner {
@@ -3870,8 +3889,8 @@ a.button.button-head-item2:hover {
   font-family: "Montserrat", Sans-serif;
   font-weight: normal;
   font-style: italic;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 12px;
+  line-height: 25px;
 }
 
 .testimonial-style-3 .progress-swiper {
@@ -3934,7 +3953,7 @@ a.button.button-head-item2:hover {
 
 .irhas3 span.divider-counter {
   height: 5px;
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   width: 15%;
   display: inline-block;
   vertical-align: middle;
@@ -3989,11 +4008,11 @@ a.button.button-head-item2:hover {
 
 .irhas3 .blog-block {
   padding: 97px 0 117px;
-  background-color: #fff8f2;
+  background-color: var(--tertiary-color);
 }
 .irhas3 .blog-wrap {
   padding: 18px 0 57px;
-  background-color: #fff8f2;
+  background-color: var(--tertiary-color);
 }
 
 .irhas3 .blog-title {
@@ -4092,11 +4111,11 @@ a.button.button-head-item2:hover {
 .irhas3 .blog-item-style-1 .post-thumb-img a {
   font-size: 15px;
   font-weight: bold;
-  color: #17193c;
+  color: var(--secondary-color);
 }
 
 .irhas3 .blog-item-style-1 .post-thumb-img a:hover {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3 .blog-item-style-1 .post-thumb-img img {
@@ -4147,7 +4166,7 @@ a.button.button-head-item2:hover {
 }
 
 .irhas3 .blog-item-style-1 .the-category a:hover {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3 .blog-item-style-1 .post-text.excerpt p {
@@ -4185,7 +4204,7 @@ a.button.button-head-item2:hover {
 }
 
 .irhas3 .blog-item-style-1 .post-thumb-img .author p.author-role {
-  color: #ef7a5e;
+  color: var(--secondary-color);
   font-size: 12px;
 }
 
@@ -4222,7 +4241,7 @@ a.button.button-head-item2:hover {
 }
 
 .irhas3 .blog-item-style-1 .post-content-wrap .post-inner.box-shadow-content {
-  border: 1px solid #efefef;
+  border: 1px solid var(--tertiary-color);
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
@@ -4295,7 +4314,7 @@ a.button.button-head-item2:hover {
 
 .irhas1 .service-block-home1 {
   padding: 100px 0 120px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 .irhas1 .banner-contact-block {
@@ -4569,7 +4588,7 @@ a.button.button-head-item2:hover {
   text-transform: uppercase;
   line-height: 50px;
   letter-spacing: 1.6px;
-  color: #ef7a5e;
+  color: var(--secondary-color);
   display: block;
 }
 
@@ -4590,14 +4609,14 @@ a.button.button-head-item2:hover {
 
 .irhas3 .banner-contact-block {
   padding: 60px 0 65px;
-  background-color: #ef7a5e;
+  background-color: var(--tertiary-color);
   text-align: center;
 }
 
 .irhas3 .button-banner-contact a {
   font-weight: bold;
-  fill: #ef7a5e;
-  color: #ef7a5e;
+  fill: var(--secondary-color);
+  color: var(--secondary-color);
   background-color: #ffffff;
   border-radius: 50px 50px 50px 50px;
   padding: 14px 30px;
@@ -4968,12 +4987,12 @@ a.button.button-head-item2:hover {
   text-transform: uppercase;
   line-height: 3.1em;
   letter-spacing: 1.6px;
-  color: #ef7a5e;
+  color: var(--secondary-color);
   display: block;
 }
 
 .irhas3.project .portfolio-block {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   padding: 120px 0;
 }
 
@@ -5076,7 +5095,7 @@ a.button.button-head-item2:hover {
   z-index: 1;
   opacity: 0;
   transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   border-radius: 5px;
 }
 
@@ -5121,9 +5140,9 @@ a.button.button-head-item2:hover {
 
 .irhas3.project .button-banner-contact a {
   font-weight: bold;
-  fill: #ef7a5e;
-  color: #ef7a5e;
-  background-color: #ffffff;
+  fill: var(--secondary-color);
+  color: var(--secondary-color);
+  background-color: var(--secondary-light-color);
   border-radius: 50px 50px 50px 50px;
   padding: 13px 30px;
   margin-top: 20px;
@@ -5719,7 +5738,7 @@ a.button.button-head-item2:hover {
   text-transform: uppercase;
   line-height: 70px;
   letter-spacing: 1.6px;
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3.about3 .about2-home2-block h2.the-title {
@@ -5729,7 +5748,7 @@ a.button.button-head-item2:hover {
   line-height: 1.4em;
   margin-top: 0px;
   margin-bottom: 20px;
-  color: #17193c;
+  color: var(--secondary-color);
 }
 
 .irhas2 .about2-home2-block .the-desc i {
@@ -5759,7 +5778,7 @@ a.button.button-head-item2:hover {
   text-transform: uppercase;
   line-height: 70px;
   letter-spacing: 1.6px;
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3.about3 .team-style-1 .team-container:before {
@@ -5771,7 +5790,7 @@ a.button.button-head-item2:hover {
   content: "";
   position: absolute;
   transition: all 0.3s ease-in-out;
-  background-color: rgba(239, 122, 94, 0.79);
+  background-color: var(--secondary-light-color);
   transform: translate(-50%, -50%);
 }
 
@@ -5863,7 +5882,7 @@ a.button.button-head-item2:hover {
   padding-left: 24px;
   margin-bottom: 20px;
   margin-top: 15px;
-  border-left: 4px solid#EF7A5E;
+  border-left: 4px solidvar(--secondary-color);
   font-size: 21px;
   font-weight: 500;
   line-height: 30px;
@@ -5879,7 +5898,7 @@ a.button.button-head-item2:hover {
 .irhas3.about3 .team-block-home2 {
   position: relative;
   padding: 294px 40px 148px;
-  background-color: #c8c8c8;
+  background-color: var(--tertiary-color);
 }
 
 .irhas3.about3 .team-block-home2 .team-wrap {
@@ -5922,7 +5941,7 @@ a.button.button-head-item2:hover {
   content: "";
   position: absolute;
   transition: all 0.3s ease-in-out;
-  background-color: rgba(239, 122, 94, 0.79);
+  background-color: rgba(94, 174, 239, 0.79);
   transform: translate(-50%, -50%);
 }
 
@@ -6035,7 +6054,7 @@ a.button.button-head-item2:hover {
 
 .irhas3 .testimonial-home2-block {
   position: relative;
-  background-color: #17193c;
+  background-color: var(--tertiary-color);
   padding: 286px 40px 85px;
 }
 
@@ -6049,7 +6068,7 @@ a.button.button-head-item2:hover {
 }
 
 .irhas3.about3 .testimonial-home2-block .shape-fill {
-  fill: #c8c8c8;
+  fill: var(--tertiary-color);
 }
 
 .irhas3 .testimonial-home2-block .the-title span {
@@ -6116,7 +6135,7 @@ textarea.field-contact-irhas1 {
 }
 
 .irhas3 .custom-post-widget .post-content .post-thumb .irhas-overlay {
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   opacity: 0;
   position: absolute;
   top: 0;
@@ -6129,7 +6148,7 @@ textarea.field-contact-irhas1 {
 .irhas3.about3 .gallery-block-about3 {
   position: relative;
   padding: 295px 0 109px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 .irhas3.about3 .gallery-block-about3 .title-gallery-wrap-about3 {
@@ -6146,7 +6165,7 @@ textarea.field-contact-irhas1 {
 }
 
 .irhas3.about3 .gallery-block-about3 .shape-fill {
-  fill: #17193c;
+  fill: var(--tertiary-color);
 }
 
 .irhas3.about3 .gallery-block-about3 .testimonial-swiper-wrap {
@@ -6199,12 +6218,12 @@ textarea.field-contact-irhas1 {
 .irhas3.about3 .gallery-block-about3 .swiper-button-next {
   width: 45px;
   transition: 0.1s;
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3.about3 .gallery-block-about3 .swiper-button-prev:hover,
 .irhas3.about3 .gallery-block-about3 .swiper-button-next:hover {
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   color: #ffffff;
   border-radius: 25px;
 }
@@ -6291,7 +6310,7 @@ textarea.field-contact-irhas1 {
 .irhas3.about3 .testimonial-style-2 .ar-cursor {
   border-radius: 50%;
   color: #fff;
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   position: absolute;
   opacity: 1;
   width: 150px;
@@ -6498,7 +6517,7 @@ textarea.field-contact-irhas1 {
 }
 
 .blog-block .post-style-1 .blog-title a {
-  color: #17193c;
+  color: var(--secondary-color);
 }
 
 .blog-block .post-style-1 .blog-title a:hover {
@@ -6644,7 +6663,7 @@ form.searchform {
 }
 
 .irhas3 .blog-sidebar .widget ul li a:hover {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .blog-sidebar .widget_tag_cloud {
@@ -6771,7 +6790,7 @@ form.searchform {
 
 .irhas2.blog .blog-block-home2 {
   padding: 110px 0 107px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 .irhas2 .blog-block-home2 .blog-item-style-6 {
@@ -6832,7 +6851,7 @@ form.searchform {
 
 .irhas3.blog .blog-block {
   padding: 107px 0 135px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 .irhas3 .banner-header-style2 .title-banner-style2 span {
@@ -6842,7 +6861,7 @@ form.searchform {
   text-transform: uppercase;
   line-height: 50px;
   letter-spacing: 1.6px;
-  color: #ef7a5e;
+  color: var(--secondary-color);
   display: block;
 }
 
@@ -6857,7 +6876,7 @@ form.searchform {
 }
 
 .irhas3.blog .blog-block .blog-item-style-1 .post-thumb-img h3 a:hover {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3.blog .blog-block .blog-item-style-1 .post-thumb-img a {
@@ -7100,7 +7119,7 @@ span.icf-button-text:hover {
 
 .contact2 .navigation-wrap .title-navigation h2 {
   font-family: "Prata", Sans-serif;
-  color: #17193c;
+  color: var(--secondary-color);
   text-transform: none;
 }
 
@@ -7196,7 +7215,7 @@ span.icf-button-text:hover {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1.6px;
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3 .navigation-wrap .title-navigation h2 {
@@ -7213,11 +7232,11 @@ span.icf-button-text:hover {
 }
 
 .irhas3.contact3 .sosmed-icon a {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3.contact3 .sosmed-icon:hover {
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
 }
 
 .irhas3.contact3 .sosmed-icon:hover a {
@@ -7237,7 +7256,7 @@ span.icf-button-text:hover {
   text-transform: uppercase;
   border-radius: 5px 5px 5px 5px;
   padding: 15px 45px 15px 45px;
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   color: #ffffff;
 }
 
@@ -7596,20 +7615,20 @@ span.icf-button-text:hover {
 /* 9.3. Single Post Irhas 3 */
 
 .irhas3 .widget h4.widget-title:before {
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
 }
 
 .irhas3 .blog-sidebar .post-inner-content h5 a:hover {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3 .blog-single .tag-wrapper a {
-  color: #ef7a5e;
+  color: var(--secondary-color);
   font-family: "Poppins";
 }
 
 .irhas3 .single-post-wrap .blog-single .the-category.span-head a {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3.single-post-3
@@ -7628,21 +7647,21 @@ span.icf-button-text:hover {
 }
 
 .irhas3 .blog-sidebar .widget ul li span.comment-author-link {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3 .blog-sidebar .widget ul#recentcomments a:hover {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3 .tagcloud a:hover {
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
   color: #fff;
-  border: 1px solid #ef7a5e;
+  border: 1px solid var(--secondary-color);
 }
 
 .irhas3 .irhas-service-contact input[type="submit"] {
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
 }
 
 .irhas3 .latest-post-content a {
@@ -7709,7 +7728,7 @@ span.icf-button-text:hover {
 }
 
 .blog-single blockquote::before {
-  background: #ef7a5e;
+  background: var(--secondary-color);
 }
 
 .wp-block-group__inner-container {
@@ -8104,7 +8123,7 @@ span.icf-button-text:hover {
   background: #fdfcfc;
   margin-right: 5px;
   border-radius: 4px;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--tertiary-color);
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -8202,25 +8221,25 @@ span.icf-button-text:hover {
 
 .irhas3 .accordion-1 .head:hover .arrow {
   /* opacity: 1; */
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3 .accordion-1 .head:hover h4 {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3 .single-service .post-thumb .inner-img .category .the-category {
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
 }
 
 .irhas3 .service-thumb-wrap .post-item:hover {
   border-left: 6px solid #d26c54;
-  background-color: #ef7a5e;
+  background-color: var(--secondary-color);
 }
 
 .irhas3 .widget_irhas_testimonial .car-page-arrow:hover i:before {
-  background-color: #ef7a5e;
-  border: 1px solid #ef7a5e;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
 }
 
 .irhas3
@@ -8228,7 +8247,7 @@ span.icf-button-text:hover {
   .testimonial-wrap
   .testimonial-detail-inner
   cite {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3 .widget_irhas_testimonial h5.testi-author {
@@ -8465,7 +8484,7 @@ img.alignleft {
 /* 9.8. Single Project 2 */
 
 .irhas2 .single-project-head {
-  background: #17193c;
+  background: var(--secondary-color);
 }
 
 .irhas2 .irhas-gallery-project .swiper-button-prev,
@@ -8499,17 +8518,17 @@ img.alignleft {
 /* 9.9. Single Porject 3 */
 
 .irhas3 .single-project-head {
-  background: #17193c;
+  background: var(--secondary-color);
 }
 
 .irhas3 .irhas-gallery-project .swiper-button-prev,
 .irhas3 .irhas-gallery-project .swiper-container-rtl .swiper-button-next {
-  background: #ef7a5e;
+  background: var(--secondary-color);
 }
 
 .irhas3 .irhas-gallery-project .swiper-button-next,
 .irhas3 .irhas-gallery-project .swiper-container-rtl .swiper-button-prev {
-  background: #ef7a5e;
+  background: var(--secondary-color);
 }
 
 .irhas3 .pagination-project {
@@ -8518,7 +8537,7 @@ img.alignleft {
 
 .irhas3 .pagination-project i {
   line-height: 0;
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3 .single-project-content-wrap {
@@ -8816,7 +8835,7 @@ p.copyright-footer {
 }
 
 .irhas3 .latest-post-content a i {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .latest-post-content a {
@@ -8829,7 +8848,7 @@ p.copyright-footer {
 }
 
 .irhas3 .latest-post-content a:hover {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .irhas3
@@ -8849,7 +8868,7 @@ p.copyright-footer {
   .post-inner-content
   h5
   a:hover {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
 
 .footer-widgets-holder-home2
@@ -8894,7 +8913,7 @@ p.copyright-footer {
 }
 
 .irhas3 .footer-bottom-holder {
-  background-color: #ef7a5e;
+  background-color: var(--tertiary-color);
 }
 
 .irhas3 .footer-bottom-contact .contact-footer-menu li {
@@ -8915,5 +8934,34 @@ p.copyright-footer {
   .post-inner-content
   .date
   a:hover {
-  color: #ef7a5e;
+  color: var(--secondary-color);
 }
+
+#logo_header {
+  max-width: 100% !important;
+}
+
+.fw-semi-bold {
+  font-weight: 300;
+}
+
+.fw-bold {
+  font-weight: 800;
+}
+.founder-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  .founder-name {
+    color: white;
+    margin-bottom: 0px;
+  }
+  
+  .founder-title {
+    color: var(--secondary-color);
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+
